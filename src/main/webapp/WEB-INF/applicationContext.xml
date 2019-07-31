@@ -5,4 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <!-- 负责mvc组建的配置 -->
     <!--  context:component-scan base-package="osgi.web.controller"/ -->
+     <bean class="osgi.web.servlet.HelloServlet">
+       		<property name="user" ref="userinfo" />
+       </bean>
 </beans>

@@ -8,9 +8,16 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
        
        <bean id="account" class="osgi.web.beans.Account" />
-       <bean id="userinfo" class="osgi.web.beans.UserInfo" />
+       <bean id="userinfo" class="osgi.web.beans.UserInfo" >
+       		<property name="account" value="Sysadmin"/>
+        	<property name="password" value="adminpassword"/>
+       </bean>
+       <bean id="operator" class="osgi.web.beans.UserInfo" >
+       		<property name="account" value="OperatorUser"/>
+        	<property name="password" value="ops_password"/>
+       </bean>
        <bean id="reportinfo" class="osgi.web.beans.ReportInfo"/>
-       
+      
  
     
 </beans>
