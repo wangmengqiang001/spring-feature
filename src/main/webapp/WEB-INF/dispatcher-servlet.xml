@@ -26,7 +26,6 @@
 	<mvc:default-servlet-handler /><!-- 配置静态资源的处理，实现解耦，很关键 -->
 
 
-
 	<mvc:annotation-driven>
 		<mvc:message-converters>
 			<bean
@@ -36,7 +35,9 @@
 		</mvc:message-converters>
 	</mvc:annotation-driven>
 
-	<bean name="/hello" class="osgi.web.controller.HelloWorld"></bean>
+	<bean name="/hello" class="osgi.web.controller.HelloWorld">
+		<property name="user" ref="userinfo"></property>
+	</bean>
 	<!-- 配置视图解析器 -->
 	<!-- InternalResourceViewResolver最为简单，解析jsp 若要使用jstl标签处理，则需要将InternalResourceViewResolver解析为jstlView -->
 	<bean id="viewResolver"
@@ -47,5 +48,5 @@
 
 	<!-- 自动扫描装配 -->
 	<context:component-scan
-		base-package="osgi.web.controller" />
+		base-package="osgi.web.controller,osgi.web.beans" />
 </beans>

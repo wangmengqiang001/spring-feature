@@ -1,5 +1,8 @@
 package osgi.web.beans;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class UserInfo {
 	private String account;
 	@Override
