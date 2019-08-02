@@ -3,10 +3,12 @@ package osgi.web.beans;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -26,6 +28,19 @@ public class TestInjectBeans {
 	@Autowired(required=false)
 	private Account account;
 	
+	@Autowired
+	protected ApplicationContext ctx;
+	
+	private UserInfo fromCtx;
+
+	
+	@Before 
+	public void setUp() {
+		
+		fromCtx = (UserInfo) ctx.getBean("userinfo");
+		
+	}
+	
 	@Test
 	public void test() {
 		//fail("Not yet implemented");
@@ -33,6 +48,15 @@ public class TestInjectBeans {
 		assertEquals(userinfo.getAccount(),"OperatorUser");
 		assertEquals(userinfo.getPassword(),"ops_password");
 	}
+	
+	@Test
+	public void testFromCtx() {
+		//fail("Not yet implemented");
+		assertNotNull(fromCtx);
+		assertEquals(fromCtx.getAccount(),"Sysadmin");
+		assertEquals(fromCtx.getPassword(),"adminpassword");
+	}
+	
 	
 	@Test
 	public void testInjectUser() {
