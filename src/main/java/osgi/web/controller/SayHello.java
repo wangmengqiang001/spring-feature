@@ -1,5 +1,8 @@
 package osgi.web.controller;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -21,6 +24,9 @@ public class SayHello {
 	@Autowired
 	private UserInfo userinfo;
 	
+	@Inject
+	@Named(value="operator")
+	private UserInfo namedOperator;
 
 
 	@RequestMapping("/")
@@ -58,6 +64,15 @@ public class SayHello {
 		
 		
 		return user;		
+		//return "hi";
+	}
+	
+	@RequestMapping("/hinamed")
+	@ResponseBody
+	public UserInfo sayNamed() {
+		
+		
+		return namedOperator;		
 		//return "hi";
 	}
 

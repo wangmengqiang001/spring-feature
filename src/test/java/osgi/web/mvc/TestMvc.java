@@ -64,6 +64,20 @@ public class TestMvc {
 		
 		
 	}
+	@Test
+	public void testMvcSayhiInject() throws Exception {
+		
+		this.mockMvc.perform(get("/say/hinamed").accept(MediaType.parseMediaType("application/json")))
+		.andExpect(status().isOk())
+		.andExpect(content().string(containsString("account")))
+		.andExpect(content().string(containsString("OperatorUser")))
+		.andExpect(jsonPath("$.account").value("OperatorUser"))
+		.andExpect(jsonPath("$.password").value("ops_password"));
+		
+		//.andExpect(forwardedUrl("/WEB-INF/index.jsp"));
+		
+		
+	}
 	@BeforeTransaction
 	public void befTrans() {
 		System.out.println("----Begin transaction-----");

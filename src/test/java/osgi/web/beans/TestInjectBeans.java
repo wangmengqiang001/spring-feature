@@ -3,6 +3,9 @@ package osgi.web.beans;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,6 +35,14 @@ public class TestInjectBeans {
 	protected ApplicationContext ctx;
 	
 	private UserInfo fromCtx;
+	
+	@Inject 
+	UserInfo operator;
+	
+	@Inject
+	@Named(value="operator")
+	UserInfo namedOpe;
+	
 
 	
 	@Before 
@@ -67,6 +78,22 @@ public class TestInjectBeans {
 	@Test
 	public void injectAccount() {
 		assertNotNull(account);
+		
+	}
+	@Test
+	public void testInjectOperator()
+	{
+		assertNotNull(operator);
+		assertEquals(operator.getAccount(),"OperatorUser");
+		assertEquals(operator.getPassword(),"ops_password");
+		
+	}
+	@Test
+	public void testNamedInjectOperator()
+	{
+		assertNotNull(namedOpe);
+		assertEquals(namedOpe.getAccount(),"OperatorUser");
+		assertEquals(namedOpe.getPassword(),"ops_password");
 		
 	}
 
