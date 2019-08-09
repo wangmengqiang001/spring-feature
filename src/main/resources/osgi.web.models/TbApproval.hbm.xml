@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-10-17 20:45:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="osgi.web.models.TbApproval" table="TB_APPROVAL" optimistic-lock="version">
+        <composite-id name="id" class="com.norin.model.TbApprovalId">
+            <key-property name="approver" type="string">
+                <column name="APPROVER" length="30" />
+            </key-property>
+            <key-property name="approveres" type="string">
+                <column name="APPROVERES" length="10" />
+            </key-property>
+            <key-property name="memo" type="string">
+                <column name="MEMO" length="512" />
+            </key-property>
+            <key-property name="tmapprove" type="serializable">
+                <column name="TMAPPROVE" />
+            </key-property>
+            <key-property name="prodId" type="big_decimal">
+                <column name="PROD_ID" precision="22" scale="0" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

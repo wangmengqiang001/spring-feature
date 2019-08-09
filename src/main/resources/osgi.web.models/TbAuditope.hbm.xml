@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-10-17 20:45:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="osgi.web.models.TbAuditope" table="TB_AUDITOPE" optimistic-lock="version">
+        <composite-id name="id" class="osgi.web.models.TbAuditopeId">
+            <key-property name="account" type="string">
+                <column name="ACCOUNT" length="30" />
+            </key-property>
+            <key-property name="name" type="string">
+                <column name="NAME" length="20" />
+            </key-property>
+            <key-property name="role" type="string">
+                <column name="ROLE" length="20" />
+            </key-property>
+            <key-property name="address" type="string">
+                <column name="ADDRESS" length="20" />
+            </key-property>
+            <key-property name="operTime" type="timestamp">
+                <column name="OPER_TIME" length="7" />
+            </key-property>
+            <key-property name="operType" type="string">
+                <column name="OPER_TYPE" length="30" />
+            </key-property>
+            <key-property name="operate" type="string">
+                <column name="OPERATE" length="1024" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

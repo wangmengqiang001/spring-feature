@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-10-21 14:51:22 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="osgi.web.models.AccountInfo" table="TB_ACCOUNT">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="account" type="string">
+            <column name="ACCOUNT" length="30" not-null="true" unique="true">
+                <comment>&#181;&#199;&#194;&#188;ID</comment>
+            </column>
+        </property>
+          <property name="password" type="string">
+            <column name="PASSWORD" length="20">
+                <comment>&#211;&#195;&#187;&#167;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+    </class>    
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-10-17 20:45:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="osgi.web.models.TbAccount" table="TB_ACCOUNT" optimistic-lock="version">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="increment" />
+        </id>
+        <property name="account" type="string">
+            <column name="ACCOUNT" length="30" not-null="true" unique="true">
+                <comment>&#181;&#199;&#194;&#188;ID</comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="20">
+                <comment>&#211;&#195;&#187;&#167;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="role" type="string">
+            <column name="ROLE" length="20" not-null="true">
+                <comment>&#185;&#220;&#192;&#237;&#212;&#177;(admin)&#163;&#172;&#201;&#243;&#188;&#198;&#212;&#177;(audit),
+                &#198;&#213;&#205;&#168;&#211;&#195;&#187;&#167;(user),&#201;&#243;&#197;&#250;&#213;&#223;(approval)</comment>
+            </column>
+        </property>
+         <property name="depart" type="string">
+            <column name="DEPART" length="20" />
+        </property>
+        <property name="phone" type="string">
+            <column name="PHONE" length="20" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="30" />
+        </property>
+        <property name="securitylevel" type="int">
+            <column name="SECURITYLEVEL"  />
+        </property>
+    </class>
+</hibernate-mapping>
