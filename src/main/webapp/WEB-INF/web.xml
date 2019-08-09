@@ -9,7 +9,7 @@
      
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/applicationContext.xml,classpath:/spring-config/beans.xml</param-value>
+        <param-value>/WEB-INF/applicationContext.xml,classpath:/spring-config/beans.xml,/WEB-INF/hibernate-*.xml</param-value>
     </context-param>
     
     

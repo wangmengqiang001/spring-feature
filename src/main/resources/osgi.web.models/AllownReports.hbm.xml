@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-13 17:40:34 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class name="osgi.web.models.AllownReports" table="TB_ALLOWN">
+  <composite-id >
+  <!--  class="com.norin.model.AllownReports" name="id" -->
+  <key-property name="productid" type="int">
+   <column name="PRODUCT_ID"/>
+  </key-property>
+  <key-property name="userid" type="int">
+   <column name="USER_ID"/>
+   </key-property>
+    <key-property name="allown" type="int">
+   <column name="ALLOWN"/>
+  </key-property>
+  </composite-id>
+ </class>
+</hibernate-mapping>
