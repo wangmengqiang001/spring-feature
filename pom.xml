@@ -127,7 +127,7 @@
 		<finalName>spring-feature</finalName>
 	</build>
 	<properties>
-		<spring-version>4.3.24.RELEASE</spring-version>
+		<spring-version>5.3.18</spring-version>
 		<hibernate-version>5.2.10.Final</hibernate-version>
 		<jackson.version>2.8.11.2</jackson.version>
 
